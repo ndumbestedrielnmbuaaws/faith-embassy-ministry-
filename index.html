@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Faith Embassy Ministry International, a Pentecostal church in Makanga, Muyuka, South West Region, Cameroon.">
+<link rel="icon" href="logo.jpg">
+<title>Faith Embassy Ministry International</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: an "embassy of heaven" — a royal hero with a flame mark, then credential-style service passes, ministries grid, beliefs, and a visit/contact block */
+:root{
+  --bg:#f4f7fc; --surface:#ffffff; --ink:#111b33; --muted:#4f5b75; --line:#dbe3f1;
+  --royal:#0f2470; --royal-2:#1f44b8; --flame:#e8892a; --flame-2:#c9561b; --gold:#d9a93c;
+  --on-royal:#f2f6ff; --on-royal-muted:#b9c8ec; --green:#2f9e44;
+  --display:"Marcellus", "Cinzel", Georgia, serif;
+  --body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0b1224; --surface:#121c36; --ink:#e9eefb; --muted:#9fb0d2; --line:#22304f;
+  --royal:#0c1a4d; --royal-2:#1a3790; --flame:#f29a3f; --flame-2:#e06d2c; --gold:#e6bb55;
+  --on-royal:#f2f6ff; --on-royal-muted:#b3c3e8; --green:#4cc265; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0b1224; --surface:#121c36; --ink:#e9eefb; --muted:#9fb0d2; --line:#22304f;
+  --royal:#0c1a4d; --royal-2:#1a3790; --flame:#f29a3f; --flame-2:#e06d2c; --gold:#e6bb55;
+  --on-royal:#f2f6ff; --on-royal-muted:#b3c3e8; --green:#4cc265; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.65}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--flame);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin-inline:auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;line-height:1.15;margin:0}
+h2{font-size:clamp(1.9rem,4vw,2.7rem)}
+h3{font-size:1.35rem}
+p{margin:0}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--flame-2)}
+
+/* nav */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--royal);color:var(--on-royal);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand span{font-family:var(--display);font-size:1.05rem;letter-spacing:.04em;line-height:1.1}
+.brand small{display:block;font-family:var(--body);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--on-royal-muted)}
+.links{display:flex;gap:22px;font-size:.92rem;font-weight:500}
+.links a{text-decoration:none;color:var(--on-royal-muted)}
+.links a:hover{color:var(--on-royal)}
+.menu-btn{display:none;background:none;border:1px solid rgba(255,255,255,.25);color:var(--on-royal);border-radius:8px;padding:6px 12px;font:inherit;font-size:.9rem;cursor:pointer}
+@media (max-width:820px){
+  .menu-btn{display:block}
+  .links{display:none;position:absolute;left:0;right:0;top:100%;background:var(--royal);flex-direction:column;gap:0;padding:8px 20px 16px}
+  .links.open{display:flex}
+  .links a{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+}
+
+/* hero */
+.hero{background:radial-gradient(120% 90% at 85% 10%, var(--royal-2) 0%, var(--royal) 60%);color:var(--on-royal);position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;padding-block:72px 84px}
+.hero h1{font-size:clamp(2.4rem,6vw,4.3rem);letter-spacing:.01em}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .lead{margin-top:20px;max-width:34em;color:var(--on-royal-muted);font-size:1.15rem}
+.verse{margin-top:28px;padding-left:16px;border-left:2px solid var(--flame);color:var(--on-royal);font-size:.98rem;max-width:32em}
+.verse cite{display:block;margin-top:4px;font-style:normal;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;font-size:.98rem;text-decoration:none;border:1.5px solid transparent;cursor:pointer;font-family:inherit}
+.btn-flame{background:var(--flame);color:#24130a}
+.btn-flame:hover{background:var(--gold)}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:var(--on-royal)}
+.btn-ghost:hover{border-color:var(--on-royal)}
+.flame-wrap{display:flex;justify-content:center}
+.logo-hero{width:100%;max-width:340px;aspect-ratio:1;border-radius:50%;object-fit:cover;box-shadow:0 0 0 6px rgba(255,255,255,.08),0 0 80px 10px color-mix(in srgb,var(--flame) 35%,transparent)}
+.tagline{margin-top:14px;font-size:.85rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green)}
+@media (max-width:820px){.hero-grid{grid-template-columns:1fr;padding-block:48px 56px}.flame-wrap{order:-1}.logo-hero{max-width:200px}}
+
+/* sections */
+section{padding-block:80px}
+.sec-head{display:grid;gap:12px;max-width:40em;margin-bottom:40px}
+.sec-head p{color:var(--muted)}
+
+/* service passes */
+.passes{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.pass{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 22px 20px;display:grid;gap:10px;position:relative}
+.pass .day{font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.pass .time{font-family:var(--display);font-size:2rem;color:var(--royal-2);font-variant-numeric:tabular-nums;line-height:1}
+:root[data-theme="dark"] .pass .time{color:var(--gold)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .pass .time{color:var(--gold)}}
+.pass h3{font-size:1.2rem}
+.pass p{color:var(--muted);font-size:.95rem}
+.pass .tag{justify-self:start;font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:999px;background:color-mix(in srgb,var(--flame) 16%,transparent);color:var(--flame-2)}
+.pass.main{background:var(--royal);border-color:var(--royal);color:var(--on-royal)}
+.pass.main .day,.pass.main p{color:var(--on-royal-muted)}
+.pass.main .time{color:var(--gold)}
+.pass.main .tag{background:var(--flame);color:#24130a}
+
+/* about */
+.about{background:var(--surface);border-block:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.about-grid > div{min-width:0;display:grid;gap:18px}
+.about-grid p{color:var(--muted)}
+.pillars{display:grid;gap:14px}
+.pillar{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;padding-block:14px;border-top:1px solid var(--line)}
+.pillar:first-child{border-top:0;padding-top:0}
+.pillar .ic{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--flame) 14%,transparent);color:var(--flame-2)}
+.pillar h3{font-size:1.15rem;margin-bottom:2px}
+.pillar p{font-size:.95rem}
+@media (max-width:820px){.about-grid{grid-template-columns:1fr;gap:36px}}
+
+/* ministries */
+.min-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.min{background:var(--surface);padding:26px;display:grid;gap:8px;align-content:start}
+.min h3{font-size:1.2rem}
+.min p{color:var(--muted);font-size:.95rem}
+.min .ref{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--flame-2);font-weight:600}
+
+/* beliefs */
+.beliefs{background:var(--royal);color:var(--on-royal)}
+.beliefs .sec-head p{color:var(--on-royal-muted)}
+.beliefs .eyebrow{color:var(--gold)}
+.bel-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 48px;list-style:none;margin:0;padding:0}
+.bel-list li{padding-block:18px;border-top:1px solid rgba(255,255,255,.12);display:grid;gap:4px}
+.bel-list strong{font-family:var(--display);font-weight:400;font-size:1.2rem}
+.bel-list span{color:var(--on-royal-muted);font-size:.95rem}
+.bel-list em{font-style:normal;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+
+/* events */
+.events{display:grid;gap:0;border-top:1px solid var(--line)}
+.event{display:grid;grid-template-columns:110px 1fr auto;gap:20px;align-items:center;padding-block:20px;border-bottom:1px solid var(--line)}
+.event .date{font-family:var(--display);font-size:1.6rem;line-height:1;color:var(--flame-2);font-variant-numeric:tabular-nums}
+.event .date small{display:block;font-family:var(--body);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.event > div{min-width:0}
+.event p{color:var(--muted);font-size:.95rem}
+.event .when{font-size:.88rem;color:var(--muted);white-space:nowrap}
+@media (max-width:620px){.event{grid-template-columns:80px 1fr}.event .when{grid-column:2;white-space:normal}}
+
+/* visit */
+.visit-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:28px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px;display:grid;gap:18px;align-content:start;min-width:0}
+.row{display:grid;gap:4px}
+.row .lbl{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.row .val{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:1.05rem;word-break:break-word}
+.copy{font:inherit;font-size:.8rem;font-weight:600;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.copy:hover{border-color:var(--flame)}
+.ph{background:color-mix(in srgb,var(--gold) 20%,transparent);padding:0 6px;border-radius:4px}
+.give{background:linear-gradient(160deg,var(--flame) 0%,var(--flame-2) 100%);color:#24130a;border:0}
+.give p{color:#3a1f0d}
+.give .btn{background:#24130a;color:#fff3e6;justify-self:start}
+.note{font-size:.85rem;color:var(--muted)}
+@media (max-width:820px){.visit-grid{grid-template-columns:1fr}}
+
+
+/* booking */
+.book-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:start}
+.book-grid > *{min-width:0}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:grid;gap:6px}
+.field.full{grid-column:1/-1}
+.field label{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.field input,.field select,.field textarea{font:inherit;font-size:1rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:11px 12px;width:100%}
+.field textarea{min-height:96px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--royal-2);outline-offset:1px}
+.btn-wa{background:#1f9d55;color:#fff;justify-self:start}
+.btn-wa:hover{background:#178246}
+.steps{display:grid;gap:12px;list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{display:grid;grid-template-columns:32px 1fr;gap:12px;color:var(--muted);counter-increment:s}
+.steps li::before{content:counter(s);width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--royal);color:var(--on-royal);font-weight:700;font-size:.9rem}
+.wa-num{font-family:var(--display);font-size:1.8rem;color:var(--ink);font-variant-numeric:tabular-nums}
+@media (max-width:820px){.book-grid{grid-template-columns:1fr}}
+@media (max-width:520px){.form{grid-template-columns:1fr}}
+footer{background:var(--royal);color:var(--on-royal-muted);padding-block:40px;font-size:.9rem}
+.foot{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+.foot strong{font-family:var(--display);font-weight:400;color:var(--on-royal);font-size:1.1rem}
+</style>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="Faith Embassy Ministry International, home">
+      <img src="logo.jpg" alt="" width="38" height="38" style="border-radius:50%;background:#fff">
+      <span>Faith Embassy<small>Ministry International</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <nav class="links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#ministries">Ministries</a>
+      <a href="#beliefs">Beliefs</a>
+      <a href="#events">Events</a>
+      <a href="#book">Book</a>
+      <a href="#visit">Visit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero" style="padding-block:0">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow" style="color:var(--gold)">A Spirit-filled Pentecostal church · Makanga, Muyuka</p>
+        <h1>Faith Embassy <em>Ministry International</em></h1>
+        <p class="tagline">Revealing Christ through the Word</p>
+        <p class="lead">An embassy of the Kingdom of God on earth. We gather to worship in spirit and in truth, preach the full Gospel of Jesus Christ, and pray for the power of the Holy Spirit to change lives, families and nations.</p>
+        <blockquote class="verse">We are ambassadors for Christ, as though God did beseech you by us.<cite>2 Corinthians 5:20</cite></blockquote>
+        <div class="cta">
+          <a class="btn btn-flame" href="#services">Join us this Sunday</a>
+          <a class="btn btn-ghost" href="#book">Book an appointment</a>
+        </div>
+      </div>
+      <div class="flame-wrap"><img class="logo-hero" src="logo.jpg" alt="Faith Embassy Ministry logo: a dove and flame over an open Bible and the globe"></div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Weekly gatherings</p>
+        <h2>Come as you are. Leave renewed.</h2>
+        <p>Every service includes Spirit-led praise and worship, the preaching of the Word, and a time of prayer for salvation, healing and the baptism of the Holy Spirit.</p>
+      </div>
+      <div class="passes">
+        <article class="pass main">
+          <span class="day">Sunday</span>
+          <span class="time">9:00 AM</span>
+          <h3>Miracle Service</h3>
+          <p>Our main worship service with Spirit-filled praise, the Word, testimonies and prayer for miracles. Children's church runs at the same time.</p>
+          <span class="tag">Main service</span>
+        </article>
+        <article class="pass">
+          <span class="day">Tuesday</span>
+          <span class="time">5:00 PM</span>
+          <h3>Bible Study</h3>
+          <p>Verse-by-verse teaching and open discussion to grow strong roots in the Word of God.</p>
+          <span class="tag">Teaching</span>
+        </article>
+        <article class="pass">
+          <span class="day">Thursday</span>
+          <span class="time">5:00 PM</span>
+          <h3>Healing, Deliverance &amp; Prophetic Service</h3>
+          <p>Worship, intercession and prophetic ministry, with prayer for healing, deliverance and breakthrough.</p>
+          <span class="tag">Healing &amp; prophetic</span>
+        </article>
+        <article class="pass">
+          <span class="day">Last Friday of the month</span>
+          <span class="time">9:00 PM</span>
+          <h3>All-Night Vigil</h3>
+          <p>From 9 PM till dawn: praise, prophetic worship and prayer for the church, our families and the nations.</p>
+          <span class="tag">Monthly · till dawn</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="wrap about-grid">
+      <div>
+        <p class="eyebrow">Who we are</p>
+        <h2>A house of prayer for all nations</h2>
+        <p>Faith Embassy Ministry International is a Bible-believing, Holy Ghost-filled church. Like an embassy represents its home country in a foreign land, we exist to represent heaven here on earth: its love, its truth and its power.</p>
+        <p>Rooted in Makanga, Muyuka, in the South West Region of Cameroon, our family brings together people of many languages and cultures, united by one Lord, one faith and one baptism. Whether you are seeking God for the first time or looking for a church home, there is a place for you here.</p>
+        <blockquote class="verse" style="color:var(--ink)">And they were all filled with the Holy Ghost, and began to speak with other tongues, as the Spirit gave them utterance.<cite style="color:var(--flame-2)">Acts 2:4</cite></blockquote>
+      </div>
+      <div class="pillars">
+        <div class="pillar"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M5 8h14"/></svg></div><div><h3>Our mission</h3><p>To win souls for Christ, raise disciples who live by faith, and send ambassadors of the Gospel to every nation.</p></div></div>
+        <div class="pillar"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div><div><h3>Our vision</h3><p>A Spirit-empowered international family transforming communities through prayer, the Word and acts of love.</p></div></div>
+        <div class="pillar"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3c2 4 6 6 6 11a6 6 0 0 1-12 0c0-3 2-5 3-6 0 2 1 3 2 3-1-3 0-6 1-8z"/></svg></div><div><h3>Our values</h3><p>Holiness, prayer, worship, faithfulness to Scripture, love for one another and generous service.</p></div></div>
+        <div class="pillar"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></div><div><h3>Leadership</h3><p>Led by our General Overseer, <strong style="color:var(--ink)">Evangelist Isabel Elinge Godwill</strong>, and a team of ministers, elders and deacons who serve the church with humility.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ministries">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Get involved</p>
+        <h2>Ministries</h2>
+        <p>Every member is a minister. Find the place where your gifts can serve the body of Christ.</p>
+      </div>
+      <div class="min-grid">
+        <div class="min"><span class="ref">Psalm 150:6</span><h3>Praise &amp; Worship</h3><p>Choir, musicians and worship team leading the church into God's presence.</p></div>
+        <div class="min"><span class="ref">Proverbs 22:6</span><h3>Children's Church</h3><p>Bible lessons, songs and care for children aged 3 to 12 during Sunday service.</p></div>
+        <div class="min"><span class="ref">1 Timothy 4:12</span><h3>Youth &amp; Young Adults</h3><p>Fellowship, mentoring and bold faith for the next generation.</p></div>
+        <div class="min"><span class="ref">Titus 2:3–5</span><h3>Women of Faith</h3><p>Sisters growing together in prayer, the Word and practical support.</p></div>
+        <div class="min"><span class="ref">1 Corinthians 16:13</span><h3>Men of Valor</h3><p>Brothers building strong families and leading with integrity.</p></div>
+        <div class="min"><span class="ref">Mark 16:15</span><h3>Evangelism &amp; Outreach</h3><p>Street evangelism, hospital visits and help for those in need in our city.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="beliefs" class="beliefs">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Statement of faith</p>
+        <h2>What we believe</h2>
+        <p>We hold to the historic Christian faith and the full Gospel as preached by the apostles on the day of Pentecost.</p>
+      </div>
+      <ul class="bel-list">
+        <li><em>2 Timothy 3:16</em><strong>The Bible</strong><span>The inspired, infallible Word of God and our final authority for faith and life.</span></li>
+        <li><em>Matthew 28:19</em><strong>One God</strong><span>Eternally existing as Father, Son and Holy Spirit.</span></li>
+        <li><em>John 3:16</em><strong>Salvation</strong><span>By grace through faith in the death and resurrection of Jesus Christ.</span></li>
+        <li><em>Acts 2:38–39</em><strong>Baptism of the Holy Spirit</strong><span>A promise for every believer, with the evidence of speaking in other tongues.</span></li>
+        <li><em>James 5:14–15</em><strong>Divine healing</strong><span>Provided through the atonement of Christ and received by faith.</span></li>
+        <li><em>Acts 1:11</em><strong>The return of Christ</strong><span>Jesus is coming again, and we live ready for His appearing.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="events">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Upcoming</p>
+        <h2>Church calendar</h2>
+        <p>Sample events below. Replace them with your own dates.</p>
+      </div>
+      <div class="events">
+        <div class="event"><div class="date">25<small>Oct 2026</small></div><div><h3>Holy Ghost Fire Conference</h3><p>Three days of worship, teaching and prayer for revival.</p></div><span class="when">Fri–Sun · 18:00</span></div>
+        <div class="event"><div class="date">30<small>Oct 2026</small></div><div><h3>Monthly Night Vigil</h3><p>All-night prayer for the church, our families and the nations.</p></div><span class="when">Friday · 9 PM till dawn</span></div>
+        <div class="event"><div class="date">08<small>Nov 2026</small></div><div><h3>Water Baptism Sunday</h3><p>Public declaration of faith. Register with the ushers by 1 November.</p></div><span class="when">Sunday · 9:00 AM</span></div>
+        <div class="event"><div class="date">31<small>Dec 2026</small></div><div><h3>Crossover Night</h3><p>Thanksgiving, prophetic declarations and praise into the new year.</p></div><span class="when">Thursday · 21:00</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="book">
+    <div class="wrap book-grid">
+      <div style="display:grid;gap:18px">
+        <p class="eyebrow">Appointments</p>
+        <h2>Book an appointment with the church</h2>
+        <p style="color:var(--muted)">Meet the General Overseer or a minister for prayer, counselling, marriage preparation, baptism or child dedication. Bookings are made on WhatsApp.</p>
+        <div class="row"><span class="lbl">WhatsApp</span><span class="val"><span class="wa-num" id="wanum">+237 670 515 624</span><button class="copy" data-copy="wanum">Copy</button></span></div>
+        <ol class="steps">
+          <li>Fill in the form with your name and what you need.</li>
+          <li>Tap “Send on WhatsApp”. Your request opens in WhatsApp, ready to send.</li>
+          <li>Press send. The church office will reply to confirm your day and time.</li>
+        </ol>
+      </div>
+      <form class="card form" id="bookForm" novalidate>
+        <div class="field"><label for="b-name">Your name</label><input id="b-name" autocomplete="name" placeholder="e.g. Grace Ewane"></div>
+        <div class="field"><label for="b-type">Reason</label>
+          <select id="b-type">
+            <option>Prayer and counselling</option>
+            <option>Meeting with the General Overseer</option>
+            <option>Marriage counselling</option>
+            <option>Water baptism</option>
+            <option>Child dedication</option>
+            <option>Wedding</option>
+            <option>Other</option>
+          </select></div>
+        <div class="field"><label for="b-date">Preferred date</label><input id="b-date" type="date"></div>
+        <div class="field"><label for="b-time">Preferred time</label>
+          <select id="b-time"><option>Morning</option><option>Afternoon</option><option>Evening</option></select></div>
+        <div class="field full"><label for="b-msg">Message (optional)</label><textarea id="b-msg" placeholder="Anything you would like the pastor to know before you meet"></textarea></div>
+        <div class="field full"><a class="btn btn-wa" id="waBtn" href="https://wa.me/237670515624" target="_blank" rel="noopener">Send on WhatsApp</a>
+        <p class="note">WhatsApp opens with your message filled in. Nothing is sent until you press send there.</p></div>
+      </form>
+    </div>
+  </section>
+
+  <section id="visit" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Plan your visit</p>
+        <h2>We would love to welcome you</h2>
+        <p>Arrive 10 minutes early and our ushers will help you find a seat and show the children to their class.</p>
+      </div>
+      <div class="visit-grid">
+        <div class="card">
+          <div class="row"><span class="lbl">Address</span><span class="val">Makanga, Muyuka<br>South West Region, Cameroon</span><a class="btn" style="justify-self:start;margin-top:6px;padding:8px 16px;font-size:.88rem;border-color:var(--line);color:var(--ink)" href="https://www.google.com/maps/search/?api=1&amp;query=Makanga%2C+Muyuka%2C+South+West+Region%2C+Cameroon" target="_blank" rel="noopener">Open in Google Maps</a></div>
+          <div class="row"><span class="lbl">WhatsApp · appointments</span><span class="val"><span id="phone">+237 670 515 624</span><button class="copy" data-copy="phone">Copy</button></span></div>
+          <div class="row"><span class="lbl">Facebook</span><span class="val"><a href="https://www.facebook.com/search/top?q=Faith%20Embassy%20Ministry" target="_blank" rel="noopener" style="font-weight:600;color:var(--royal-2)">Faith Embassy Ministry</a></span></div>
+          <div class="row"><span class="lbl">Prayer requests</span><span class="val" style="font-size:.98rem;color:var(--muted)">Send your request on WhatsApp. Our intercessors pray over every request at the Thursday healing and deliverance service.</span></div>
+        </div>
+        <div class="card give">
+          <p class="eyebrow" style="color:#3a1f0d">Tithes &amp; offerings</p>
+          <h3 style="font-size:1.7rem">Give with a cheerful heart</h3>
+          <p>Your giving supports the work of the ministry, outreach to the community and missions abroad.</p>
+          <p style="font-size:.9rem">“Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for God loveth a cheerful giver.” 2 Corinthians 9:7</p>
+          <a class="btn" href="#visit">Giving details from the church office</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div><strong>Faith Embassy Ministry International</strong><br>Ambassadors for Christ, filled with the Spirit.<br>Makanga, Muyuka · South West Region, Cameroon</div>
+    <div style="display:grid;gap:6px;justify-items:end"><a href="https://www.facebook.com/search/top?q=Faith%20Embassy%20Ministry" target="_blank" rel="noopener" style="color:var(--on-royal);font-weight:600">Follow us on Facebook: Faith Embassy Ministry</a><span>© 2026 Faith Embassy Ministry International</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menuBtn'),nav=document.getElementById('navLinks');
+  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');btn.setAttribute('aria-expanded','false')}});
+
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var el=document.getElementById(b.dataset.copy),t=el.textContent.trim();
+      var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)};
+      var fallback=function(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'};
+      try{navigator.clipboard.writeText(t).then(done,fallback)}catch(e){fallback()}
+    });
+  });
+
+  var f=['b-name','b-type','b-date','b-time','b-msg'].map(function(i){return document.getElementById(i)}),wa=document.getElementById('waBtn');
+  function upd(){
+    var d=f[2].value?new Date(f[2].value+'T12:00').toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'}):'any day that suits';
+    var t='Hello Faith Embassy Ministry International. I would like to book an appointment.\n\nName: '+(f[0].value.trim()||'(not given)')+'\nReason: '+f[1].value+'\nPreferred date: '+d+'\nPreferred time: '+f[3].value+(f[4].value.trim()?'\n\n'+f[4].value.trim():'');
+    wa.href='https://wa.me/237670515624?text='+encodeURIComponent(t)}
+  f.forEach(function(el){el.addEventListener('input',upd);el.addEventListener('change',upd)});
+  document.getElementById('bookForm').addEventListener('submit',function(e){e.preventDefault()});
+  upd();
+})();
+</script>
+
+</body>
+</html>
